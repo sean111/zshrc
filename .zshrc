@@ -1,13 +1,15 @@
 source ~/.zplug/zplug
 source ~/zshrc/git.zsh
 
-
 POWERLEVEL9K_MODE='awesome-patched'
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "bhilburn/powerlevel9k", use:"powerlevel9k.zsh-theme"
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zlsun/solarized-man"
+zplug "zsh-users/zsh-completions"
+zplug "joel-porquet/zsh-dircolors-solarized"
+zplug "zsh-users/zsh-syntax-highlighting", nice:19
 #Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -28,9 +30,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 SAVEHIST=100
 HISTFILE=~/.zsh_history
-export LS_COLORS="di=31;41:ln=31;41:so=31;41:pi=31;41:ex=31;41:bd=31;41:cd=31;41:su=31;41:sg=31;41:tw=31;41:ow=31;41:"
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-alias ls='ls -aF -G'
+alias ls='ls -aF -G --color=auto'
 
 #powerlevel9k settings
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -54,7 +54,7 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uE868  %m-%d-%y}"
 
  POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
  POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
- #POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+ #POWERLEVEL9K_VCS_UNTRACKED_ICON='?
 
  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon context dir vcs)
  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv rbenv rvm symfony2_version battery time)
@@ -66,3 +66,8 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uE868  %m-%d-%y}"
 
  POWERLEVEL9K_STATUS_VERBOSE=false
  export DEFAULT_USER="$USER"
+
+ autoload colors zsh/terminfo
+ if [[ "$terminfo[colors]" -ge 8 ]]; then
+	colors
+ fi
