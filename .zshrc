@@ -4,12 +4,15 @@ source ~/zshrc/git.zsh
 POWERLEVEL9K_MODE='awesome-patched'
 
 zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-autosuggestions"
 zplug "bhilburn/powerlevel9k", use:"powerlevel9k.zsh-theme"
 zplug "zlsun/solarized-man"
 zplug "zsh-users/zsh-completions"
 zplug "joel-porquet/zsh-dircolors-solarized"
-zplug "zsh-users/zsh-syntax-highlighting", nice:19
+if [[ $OSTYPE != cygwin* ]]
+then
+    zplug "zsh-users/zsh-autosuggestions"
+    zplug "zsh-users/zsh-syntax-highlighting", nice:19
+fi
 #Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -30,7 +33,6 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 SAVEHIST=100
 HISTFILE=~/.zsh_history
-alias ls='ls -aF -G --color=auto'
 
 #powerlevel9k settings
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -71,3 +73,10 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uE868  %m-%d-%y}"
  if [[ "$terminfo[colors]" -ge 8 ]]; then
 	colors
  fi
+
+if [[ $OSTYPE == darwin* ]]
+then
+    alias ls='ls -aF -G'
+else
+    alias ls='ls -aF -G --color=auto'
+fi
