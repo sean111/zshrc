@@ -1,5 +1,6 @@
 source ~/.zplug/zplug
 source ~/zshrc/git.zsh
+source ~/zshrc/clipboard.zsh
 
 POWERLEVEL9K_MODE='awesome-patched'
 
