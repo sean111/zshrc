@@ -49,3 +49,8 @@ then
 else
     alias ls='ls -aF -G --color=auto'
 fi
+
+if [[ -a ~/.zshrc.local ]]; then
+    echo "Loading local config\n"
+    source ~/.zshrc.local
+fi
