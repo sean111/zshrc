@@ -1,7 +1,10 @@
+#includes
 source ~/.zplug/zplug
 source ~/zshrc/git.zsh
 source ~/zshrc/clipboard.zsh
 source ~/zshrc/keybindings.zsh
+source ~/zshrc/vagrant.zsh
+
 if [[ $OSTYPE == cygwin* ]]
 then
     zplug "yous/lime", use: "lime.zsh-theme"
