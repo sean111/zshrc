@@ -1,3 +1,4 @@
+#FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 POWERLEVEL9K_MODE='awesome-patched'
 zplug "bhilburn/powerlevel9k", use:"powerlevel9k.zsh-theme"
 #powerlevel9k settings

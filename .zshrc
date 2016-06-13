@@ -31,6 +31,11 @@ fi
 ## Then, source plugins and add commands to $PATH
 zplug load --verbose
 
+#Gitsome
+autoload bashcompinit
+bashcompinit
+source ~/zshrc/gh_complete.zsh
+
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
@@ -53,7 +58,7 @@ else
     alias ls='ls -aF -G --color=auto'
 fi
 
-if [[ -a ~/.zshrc.local ]]; then
-    echo "Loading local config\n"
-    source ~/.zshrc.local
+if [[ -a ~/.zshrc_local ]]
+then
+    source ~/.zshrc_local
 fi
