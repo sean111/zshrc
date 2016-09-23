@@ -1,9 +1,11 @@
 #includes
-source ~/.zplug/zplug
+export TERM="xterm-256color"
+source ~/.zplug/init.zsh
 source ~/zshrc/git.zsh
 source ~/zshrc/clipboard.zsh
 source ~/zshrc/keybindings.zsh
 source ~/zshrc/vagrant.zsh
+source ~/zshrc/docker.zsh
 
 if [[ $OSTYPE == cygwin* ]]
 then
@@ -62,3 +64,6 @@ if [[ -a ~/.zshrc_local ]]
 then
     source ~/.zshrc_local
 fi
+
+#Global Aliases
+alias zreload='source ~/.zshrc'
