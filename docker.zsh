@@ -11,4 +11,4 @@ alias dc='docker-compose'
 
 alias dcu='dc up'
 alias dck='dc kill'
-alias dcb='dc build
+alias dcb='dc build'

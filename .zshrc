@@ -6,6 +6,7 @@ source ~/zshrc/clipboard.zsh
 source ~/zshrc/keybindings.zsh
 source ~/zshrc/vagrant.zsh
 source ~/zshrc/docker.zsh
+source ~/zshrc/symfony_console.zsh
 
 if [[ $OSTYPE == cygwin* ]]
 then
