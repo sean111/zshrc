@@ -11,4 +11,4 @@ alias scondf='scon doctrine:schema:update --force'
 #Assets/Assetic
 alias sconai='scon asset:install'
 alias sconad='scon assetic:dump'
-alias leasconaw='scon assetic watch'
+alias sconaw='scon assetic watch'
