@@ -17,7 +17,7 @@ fi
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
 zplug "zsh-users/zsh-completions"
-zplug "joel-porquet/zsh-dircolors-solarized"
+#zplug "joel-porquet/zsh-dircolors-solarized"
 if [[ $OSTYPE != cygwin* ]]
 then
     zplug "zsh-users/zsh-autosuggestions"
@@ -57,6 +57,12 @@ HISTFILE=~/.zsh_history
 if [[ $OSTYPE == darwin* ]]
 then
     alias ls='ls -aF -G'
+    if [[ -a ~/Library/Android ]]
+    then
+        alias aavd='~/Library/Android/sdk/tools/android avd'
+        alias asdk='~/Library/Android/sdk/tools/android sdk'
+        alias android='~/Library/Android/sdk/tools/android'
+    fi
 else
     alias ls='ls -aF -G --color=auto'
 fi
@@ -68,3 +74,5 @@ fi
 
 #Global Aliases
 alias zreload='source ~/.zshrc'
+
+export PATH="$HOME/.yarn/bin:$PATH"
