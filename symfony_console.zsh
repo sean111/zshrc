@@ -31,3 +31,6 @@ alias sconaw='scon assetic watch'
 
 alias sconp="scon --env=prod"
 alias scond="scon --env=dev"
+
+alias scondge='scon doctrine:generate:entity'
+alias scondges='scon doctrine:generate:entities'

@@ -1,5 +1,6 @@
 #includes
 export TERM="xterm-256color"
+autoload -U compinit && compinit
 source ~/.zplug/init.zsh
 source ~/zshrc/git.zsh
 source ~/zshrc/clipboard.zsh
@@ -7,12 +8,14 @@ source ~/zshrc/keybindings.zsh
 source ~/zshrc/vagrant.zsh
 source ~/zshrc/docker.zsh
 source ~/zshrc/symfony_console.zsh
+source ~/zshrc/tmux.zsh
 
 if [[ $OSTYPE == cygwin* ]]
 then
     zplug "yous/lime", use: "lime.zsh-theme"
 else
-    source ~/zshrc/powerlevel9k.zsh
+    # source ~/zshrc/powerlevel9k.zsh
+    zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 fi
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
@@ -62,6 +65,7 @@ then
         alias aavd='~/Library/Android/sdk/tools/android avd'
         alias asdk='~/Library/Android/sdk/tools/android sdk'
         alias android='~/Library/Android/sdk/tools/android'
+	alias adb='~/Library/Android/sdk/platform-tools/adb'
     fi
 else
     alias ls='ls -aF -G --color=auto'
@@ -74,5 +78,6 @@ fi
 
 #Global Aliases
 alias zreload='source ~/.zshrc'
+alias ..='cd ..'
 
 export PATH="$HOME/.yarn/bin:$PATH"
