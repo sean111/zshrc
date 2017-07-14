@@ -24,7 +24,8 @@ zplug "zsh-users/zsh-completions"
 if [[ $OSTYPE != cygwin* ]]
 then
     zplug "zsh-users/zsh-autosuggestions"
-    zplug "zsh-users/zsh-syntax-highlighting", nice:19
+    #zplug "zsh-users/zsh-syntax-highlighting", nice:19
+    zplug "zdharma/fast-syntax-highlighting", nice:19
 fi
 #Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -33,6 +34,10 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
+
+zplug "popstas/zsh-command-time"
+ZSH_COMMAND_TIME_MIN_SECONDS=3
+ZSH_COMMAND_TIME_ECHO=1
 
 ## Then, source plugins and add commands to $PATH
 zplug load --verbose
