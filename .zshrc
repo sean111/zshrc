@@ -14,8 +14,7 @@ if [[ $OSTYPE == cygwin* ]]
 then
     zplug "yous/lime", use: "lime.zsh-theme"
 else
-    # source ~/zshrc/powerlevel9k.zsh
-    zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+    source ~/zshrc/spaceship-theme.zsh
 fi
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
@@ -27,6 +26,11 @@ then
     #zplug "zsh-users/zsh-syntax-highlighting", nice:19
     zplug "zdharma/fast-syntax-highlighting", nice:19
 fi
+
+zplug "popstas/zsh-command-time"
+ZSH_COMMAND_TIME_MIN_SECONDS=3
+ZSH_COMMAND_TIME_ECHO=1
+
 #Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -34,10 +38,6 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
-
-zplug "popstas/zsh-command-time"
-ZSH_COMMAND_TIME_MIN_SECONDS=3
-ZSH_COMMAND_TIME_ECHO=1
 
 ## Then, source plugins and add commands to $PATH
 zplug load --verbose
