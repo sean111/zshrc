@@ -86,3 +86,5 @@ alias zreload='source ~/.zshrc'
 alias ..='cd ..'
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+autoload -U zmv
