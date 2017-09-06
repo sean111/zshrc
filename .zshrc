@@ -9,13 +9,9 @@ source ~/zshrc/vagrant.zsh
 source ~/zshrc/docker.zsh
 source ~/zshrc/symfony_console.zsh
 source ~/zshrc/tmux.zsh
+source ~/zshrc/ctheme.zsh
+source ~/zshrc/theme.zsh
 
-if [[ $OSTYPE == cygwin* ]]
-then
-    zplug "yous/lime", use: "lime.zsh-theme"
-else
-    source ~/zshrc/spaceship-theme.zsh
-fi
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
 zplug "zsh-users/zsh-completions"
