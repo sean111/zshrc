@@ -9,21 +9,15 @@ source ~/zshrc/vagrant.zsh
 source ~/zshrc/docker.zsh
 source ~/zshrc/symfony_console.zsh
 source ~/zshrc/tmux.zsh
+source ~/zshrc/szsh.zsh
+source ~/zshrc/theme.zsh
 
-if [[ $OSTYPE == cygwin* ]]
-then
-    zplug "yous/lime", use: "lime.zsh-theme"
-else
-    source ~/zshrc/spaceship-theme.zsh
-fi
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
 zplug "zsh-users/zsh-completions"
-#zplug "joel-porquet/zsh-dircolors-solarized"
 if [[ $OSTYPE != cygwin* ]]
 then
     zplug "zsh-users/zsh-autosuggestions"
-    #zplug "zsh-users/zsh-syntax-highlighting", nice:19
     zplug "zdharma/fast-syntax-highlighting", nice:19
 fi
 
@@ -40,7 +34,8 @@ if ! zplug check --verbose; then
 fi
 
 ## Then, source plugins and add commands to $PATH
-zplug load --verbose
+#zplug load --verbose
+zplug load
 
 #Gitsome
 autoload bashcompinit
@@ -82,7 +77,6 @@ then
 fi
 
 #Global Aliases
-alias zreload='source ~/.zshrc'
 alias ..='cd ..'
 
 export PATH="$HOME/.yarn/bin:$PATH"
