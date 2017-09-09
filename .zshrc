@@ -9,6 +9,7 @@ source ~/zshrc/vagrant.zsh
 source ~/zshrc/docker.zsh
 source ~/zshrc/symfony_console.zsh
 source ~/zshrc/tmux.zsh
+source ~/zshrc/laravel.zsh
 
 if [[ $OSTYPE == cygwin* ]]
 then
