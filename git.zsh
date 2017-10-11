@@ -159,3 +159,7 @@ alias gwc='git clean -n'
 alias gwC='git clean -f'
 alias gwx='git rm -r'
 alias gwX='git rm -rf'
+
+#Sean Mod
+alias gccheck='git branch --remote --merged origin/master | grep -v 'master' | cut -b 10- | xargs'
+alias gclean='git branch --remote --merged origin/master | grep -v 'master' | cut -b 10- | xargs git push --delete origin'
