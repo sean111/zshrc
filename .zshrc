@@ -80,6 +80,9 @@ fi
 #Global Aliases
 alias ..='cd ..'
 
+#Key Binds
+bindkey "^K" kill-whole-line
+
 export PATH="$HOME/.yarn/bin:$PATH"
 
 autoload -U zmv
