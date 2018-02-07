@@ -12,6 +12,7 @@ source ~/zshrc/tmux.zsh
 source ~/zshrc/szsh.zsh
 source ~/zshrc/theme.zsh
 source ~/zshrc/laravel.zsh
+source ~/zshrc/z.sh
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
