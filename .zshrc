@@ -1,6 +1,6 @@
 #includes
 export TERM="xterm-256color"
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
 source ~/.zplug/init.zsh
 source ~/zshrc/git.zsh
 source ~/zshrc/clipboard.zsh
@@ -20,7 +20,7 @@ zplug "zsh-users/zsh-completions"
 if [[ $OSTYPE != cygwin* ]]
 then
     zplug "zsh-users/zsh-autosuggestions"
-    zplug "zdharma/fast-syntax-highlighting", nice:19
+    zplug "zdharma/fast-syntax-highlighting", defer:3
 fi
 
 zplug "popstas/zsh-command-time"
