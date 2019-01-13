@@ -1,5 +1,6 @@
 #includes
 export TERM="xterm-256color"
+fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit && compinit
 source ~/.zplug/init.zsh
 source ~/zshrc/git.zsh
