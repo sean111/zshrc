@@ -163,3 +163,22 @@ alias gwX='git rm -rf'
 #Sean Mod
 alias gccheck='git branch --remote --merged origin/master | grep -v 'master' | cut -b 10- | xargs'
 alias gclean='git branch --remote --merged origin/master | grep -v 'master' | cut -b 10- | xargs git push --delete origin'
+
+gfpr() {
+    if [[ -z "{$1}" ]]; then
+        echo "Please provide a valid PR id"
+        return
+    fi 
+
+    if [[ -z "{$2}" ]]; then
+        echo "Please provide a local branch name"
+        return
+    fi
+
+    if [[ -z "{$3}" ]]; then
+        remote="upstream"
+    else
+        remote=$3
+    fi
+    git fetch $remote pull/$1/head:$2
+}

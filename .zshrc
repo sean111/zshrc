@@ -11,9 +11,14 @@ source ~/zshrc/docker.zsh
 source ~/zshrc/symfony_console.zsh
 source ~/zshrc/tmux.zsh
 source ~/zshrc/szsh.zsh
-source ~/zshrc/theme.zsh
 source ~/zshrc/laravel.zsh
 source ~/zshrc/z.sh
+
+if [[ -a ~/zshrc/theme.zsh ]]; then
+    source ~/zshrc/theme.zsh
+else
+    source ~/zshrc/themes/pure-theme.zsh
+fi
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
