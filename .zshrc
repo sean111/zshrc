@@ -32,7 +32,7 @@ fi
 zplug "popstas/zsh-command-time"
 ZSH_COMMAND_TIME_MIN_SECONDS=3
 ZSH_COMMAND_TIME_ECHO=1
-
+zplug "lukechilds/zsh-nvm"
 #Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
