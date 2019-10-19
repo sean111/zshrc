@@ -1,0 +1,7 @@
+alias tf='terraform'
+alias tfi='tf init'
+alias tfv='tf validate'
+alias tfr='tf refresh'
+alias tfa='tf apply'
+alias tfd='tf destroy'
+alias tfo='tf output'

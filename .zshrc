@@ -1,28 +1,30 @@
 #includes
 export TERM="xterm-256color"
-fpath=(/usr/local/share/zsh-completions $fpath)
-#autoload -U compinit && compinit
-source ~/.zplug/init.zsh
-source ~/zshrc/git.zsh
-source ~/zshrc/clipboard.zsh
-source ~/zshrc/keybindings.zsh
-source ~/zshrc/vagrant.zsh
-source ~/zshrc/docker.zsh
-source ~/zshrc/symfony_console.zsh
-source ~/zshrc/tmux.zsh
-source ~/zshrc/szsh.zsh
-source ~/zshrc/laravel.zsh
-source ~/zshrc/z.sh
+export ZSH=~/zshrc/
+export ZPLUG=~/.zplug/
+source $ZPLUG/init.zsh
+source $ZSH/git.zsh
+source $ZSH/clipboard.zsh
+source $ZSH/keybindings.zsh
+source $ZSH/vagrant.zsh
+source $ZSH/docker.zsh
+source $ZSH/symfony_console.zsh
+source $ZSH/tmux.zsh
+source $ZSH/szsh.zsh
+source $ZSH/laravel.zsh
+source $ZSH/z.sh
+source $ZSH/terraform.zsh
 
-if [[ -a ~/zshrc/theme.zsh ]]; then
-    source ~/zshrc/theme.zsh
+if [[ -a $ZSH/theme.zsh ]]; then
+    source $ZSH/theme.zsh
 else
-    source ~/zshrc/themes/pure-theme.zsh
+    source $ZSH/themes/pure-theme.zsh
 fi
 
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zlsun/solarized-man"
 zplug "zsh-users/zsh-completions"
+autoload -U compinit && compinit
 if [[ $OSTYPE != cygwin* ]]
 then
     zplug "zsh-users/zsh-autosuggestions"
@@ -48,11 +50,15 @@ zplug load
 #Gitsome
 autoload bashcompinit
 bashcompinit
-source ~/zshrc/gh_complete.zsh
+source $ZSH/gh_complete.zsh
 
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/share/zsh/help
+# unalias run-help
+# autoload run-help
+# HELPDIR=/usr/local/share/zsh/help
+
+autoload -U run-help
+autoload run-help-sudo
+autoload run-help-git
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
